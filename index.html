@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Harshini ❤️</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.active {
+  display: flex;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  background: pink;
+  border: none;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="login" class="page active">
+  <h2>Only for Harshini ❤️</h2>
+  <p>Enter the secret code</p>
+  <input type="password" id="pass">
+  <button onclick="check()">Enter</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="p1" class="page">
+  <h1>Hey Harshini… don’t skip this ❤️</h1>
+  <button onclick="next(2)">Start</button>
+</div>
+
+<div id="p2" class="page">
+  <h2>Let’s go on a little journey ✨</h2>
+  <button onclick="next(3)">Next</button>
+</div>
+
+<div id="p3" class="page">
+  <h2>Do you remember how we met?</h2>
+  <p>That was the beginning of everything ❤️</p>
+  <button onclick="next(4)">Next</button>
+</div>
+
+<div id="p4" class="page">
+  <h2>Our crazy moments 😂</h2>
+  <p>No matter what… you always made me smile</p>
+  <button onclick="next(5)">Next</button>
+</div>
+
+<div id="p5" class="page">
+  <h2>Even though you're far away…</h2>
+  <p>You’re still always with me 💔</p>
+  <button onclick="next(6)">Next</button>
+</div>
+
+<div id="p6" class="page">
+  <h2>You mean a lot to me ❤️</h2>
+  <p>
+    You’re not just my best friend…<br>
+    You’re my comfort, my safe place,<br>
+    and one of the best things in my life
+  </p>
+  <button onclick="next(7)">Next</button>
+</div>
+
+<div id="p7" class="page">
+  <h1>Happy Birthday Harshini ❤️🎉</h1>
+  <p>I miss you so much 🥺</p>
+</div>
+
+<script>
+function check() {
+  let password = document.getElementById("pass").value;
+
+  if(password === "1234") {   // 🔴 change this later
+    document.getElementById("login").style.display = "none";
+    document.getElementById("p1").classList.add("active");
+  } else {
+    document.getElementById("error").innerText = "Wrong code 😒";
+  }
+}
+
+function next(n) {
+  let pages = document.getElementsByClassName("page");
+  for (let i = 0; i < pages.length; i++) {
+    pages[i].classList.remove("active");
+  }
+  document.getElementById("p" + n).classList.add("active");
+}
+</script>
+
+</body>
+</html>
